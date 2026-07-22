@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 años juntos</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="letter-page">
+    <p class="daily-phrase" id="dailyPhrase"></p>
+    <span class="date-stamp">18 de agosto</span>
+    <h1 class="big-title">4 años<span>juntos</span></h1>
+
+    <p class="love-text">
+      Cuatro años ya, y todavía hay días en los que te miro y siento
+      la misma emoción de las primeras semanas. Hemos cambiado, hemos
+      crecido, hemos aprendido a construir algo nuestro, y aun así lo
+      que más me gusta sigue siendo lo pequeño: las tonterías que solo
+      entendemos nosotros, los planes de domingo, tu forma de mirarme
+      cuando no sé que me estás mirando. <em>Gracias por elegirme cada día.</em>
+      Aquí van algunos de los recuerdos que hemos ido guardando por el camino.
+    </p>
+
+    <div class="carousel">
+      <button class="nav" id="prevBtn" aria-label="Foto anterior">‹</button>
+      <div class="track-viewport" id="trackViewport">
+        <!-- Cada figura es una foto. Sustituye el src de cada <img> por tus fotos reales
+             (por ejemplo: fotos/1.jpg) y cambia el texto del figcaption por tu propio recuerdo. -->
+        <figure class="polaroid" style="--tilt:-3deg">
+          <div class="photo-frame">
+            <img src="fotos/1.jpg" alt="Recuerdo 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>Nuestra primera cita</figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:2deg">
+          <div class="photo-frame">
+            <img src="fotos/2.jpg" alt="Recuerdo 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>El primer viaje juntos</figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:-1.5deg">
+          <div class="photo-frame">
+            <img src="fotos/3.jpg" alt="Recuerdo 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>Una noche cualquiera, de las buenas</figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:3deg">
+          <div class="photo-frame">
+            <img src="fotos/4.jpg" alt="Recuerdo 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>Celebrando un cumpleaños</figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:-2deg">
+          <div class="photo-frame">
+            <img src="fotos/5.jpg" alt="Recuerdo 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>Un domingo de sofá y manta</figcaption>
+        </figure>
+        <figure class="polaroid" style="--tilt:1.5deg">
+          <div class="photo-frame">
+            <img src="fotos/6.jpg" alt="Recuerdo 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="fallback-icon" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+            </div>
+          </div>
+          <figcaption>18 de agosto, otra vez</figcaption>
+        </figure>
+      </div>
+      <button class="nav" id="nextBtn" aria-label="Foto siguiente">›</button>
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+    <p class="signature">Feliz aniversario. Por muchos más.</p>
+  </div>
+
+<script>
+(function(){
+  // ---------- frase del día ----------
+  // El calendario empieza el 18 de agosto de 2026 y se repite cada 365 días,
+  // así que en cada aniversario (18 de agosto) vuelve a mostrarse la primera frase del ciclo.
+  var START_DATE = new Date(2026, 7, 22); // mes 7 = agosto (los meses en JS empiezan en 0)
+  var dailyPhraseEl = document.getElementById('dailyPhrase');
+
+  function getTodayIndex(){
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var diffDays = Math.floor((today - START_DATE) / (1000 * 60 * 60 * 24));
+    return ((diffDays % 365) + 365) % 365;
+  }
+
+  fetch('frases.json')
+    .then(function(res){ return res.json(); })
+    .then(function(frases){
+      var idx = getTodayIndex();
+      if (dailyPhraseEl && frases[idx]) {
+        dailyPhraseEl.textContent = frases[idx];
+      }
+    })
+    .catch(function(){
+      // Si se abre el archivo directamente (doble clic) el navegador bloquea
+      // la carga del JSON por seguridad. Al subirlo a GitHub Pages funciona sin problema.
+      if (dailyPhraseEl) dailyPhraseEl.style.display = 'none';
+    });
+
+  // ---------- carrusel ----------
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.polaroid'));
+  var dotsWrap = document.getElementById('dots');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var current = 0;
+
+  slides.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ir a la foto ' + (i+1));
+    b.addEventListener('click', function(){ show(i); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function show(i){
+    current = (i + slides.length) % slides.length;
+    slides.forEach(function(s, idx){ s.classList.toggle('active', idx === current); });
+    dots.forEach(function(d, idx){ d.classList.toggle('active', idx === current); });
+  }
+
+  prevBtn.addEventListener('click', function(){ show(current - 1); });
+  nextBtn.addEventListener('click', function(){ show(current + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowLeft') show(current - 1);
+    if(e.key === 'ArrowRight') show(current + 1);
+  });
+
+  show(0);
+})();
+</script>
+
+</body>
+</html>

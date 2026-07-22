@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="envelope-card" id="envelopeCard">
+    <div class="wax-seal" id="waxSeal">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.4C.4 8 2 4.5 5.4 4c2-.3 3.7.7 4.6 2.2C10.9 4.7 12.6 3.7 14.6 4c3.4.5 5 4 3.4 7.6C15.5 16.4 12 21 12 21z"/></svg>
+    </div>
+    <p class="eyebrow-mono">Correo privado</p>
+    <h1 class="letter-title">Para ti</h1>
+    <p class="letter-hint">Esta carta está cerrada.<br>Solo se abre con una fecha que los dos conocemos.</p>
+    <form id="lockForm" autocomplete="off">
+      <input type="text" id="dateInput" placeholder="DD / MM" aria-label="Introduce la fecha de nuestro aniversario" inputmode="numeric">
+      <button type="submit" class="btn-primary">Abrir</button>
+    </form>
+    <p class="error-msg" id="errorMsg">Esa fecha no es... prueba otra vez.</p>
+  </div>
+
+<script>
+(function(){
+
+  function isCorrectDate(raw){
+    var val = raw.trim().toLowerCase();
+    var m = val.match(/^(\d{1,2})\s*[\/\-.\s]\s*(\d{1,2})$/);
+    if(m){
+      var day = parseInt(m[1],10);
+      var month = parseInt(m[2],10);
+      return day === 18 && month === 8;
+    }
+    if(/^18\s*(de)?\s*agosto$/.test(val)) return true;
+    return false;
+  }
+
+  var envelopeCard = document.getElementById('envelopeCard');
+  var waxSeal      = document.getElementById('waxSeal');
+  var form         = document.getElementById('lockForm');
+  var input        = document.getElementById('dateInput');
+  var errorMsg     = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(isCorrectDate(input.value)){
+      unlock();
+    } else {
+      errorMsg.classList.add('show');
+      envelopeCard.classList.remove('shake');
+      void envelopeCard.offsetWidth; // reinicia la animación
+      envelopeCard.classList.add('shake');
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  function unlock(){
+    waxSeal.classList.add('cracking');
+    burstHearts();
+    setTimeout(function(){
+      window.location.href = 'pagina2.html';
+    }, 900);
+  }
+
+  function burstHearts(){
+    var wrap = document.createElement('div');
+    wrap.className = 'heart-burst';
+    document.body.appendChild(wrap);
+    for(var i=0;i<14;i++){
+      var s = document.createElement('span');
+      s.textContent = '♥';
+      s.style.left = (Math.random()*100)+'vw';
+      s.style.animationDelay = (Math.random()*0.4)+'s';
+      s.style.fontSize = (14+Math.random()*14)+'px';
+      wrap.appendChild(s);
+    }
+  }
+
+})();
+</script>
+
+</body>
+</html>
