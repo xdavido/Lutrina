@@ -25,38 +25,37 @@
 
 *{ box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: var(--paper);        /* color base de fondo */
-  color: var(--ink);
-  font-family: var(--font-main);
+html {
+  background-color: var(--paper); /* color base sólido */
+  min-height: 100%;
 }
 
 body {
-  /* Elimina 'background-image' y sus degradados */
+  background: transparent; /* hereda el color del html */
+  min-height: 100vh;
+  min-height: 100dvh;       /* para iOS */
   overflow-x: hidden;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px 20px;
   position: relative;
-  background-color: transparent;    /* o simplemente no definirlo, hereda de html */
-  /* Quita cualquier background-image */
+  /* elimina cualquier background-image que tuvieras antes */
 }
 
 /* ===== Fondo collage (z-index 0) ===== */
 .collage-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;            /* altura dinámica */
+  min-height: 100dvh;        /* respaldo */
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  /* Aquí van los degradados que antes estaban en body */
+  background-color: var(--paper); /* base sólida por si fallan los degradados */
   background-image:
     radial-gradient(circle at 10% 20%, var(--pink-light) 0%, transparent 35%),
     radial-gradient(circle at 90% 70%, var(--blue-light) 0%, transparent 40%),
