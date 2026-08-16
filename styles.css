@@ -25,20 +25,17 @@
 
 *{ box-sizing: border-box; }
 
-html, body{
-  margin:0; padding:0;
-  min-height:100vh;
-  background: var(--paper);
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--paper);        /* color base de fondo */
   color: var(--ink);
   font-family: var(--font-main);
 }
 
-body{
-  background-image:
-    radial-gradient(circle at 10% 20%, var(--pink-light) 0%, transparent 35%),
-    radial-gradient(circle at 90% 70%, var(--blue-light) 0%, transparent 40%),
-    radial-gradient(circle at 50% 90%, var(--yellow-light) 0%, transparent 30%),
-    radial-gradient(circle at 20% 80%, var(--orange-light) 0%, transparent 25%);
+body {
+  /* Elimina 'background-image' y sus degradados */
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
@@ -48,22 +45,32 @@ body{
   justify-content: center;
   padding: 32px 20px;
   position: relative;
+  background-color: transparent;    /* o simplemente no definirlo, hereda de html */
+  /* Quita cualquier background-image */
 }
 
 /* ===== Fondo collage (z-index 0) ===== */
-.collage-bg{
+.collage-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  /* Aquí van los degradados que antes estaban en body */
+  background-image:
+    radial-gradient(circle at 10% 20%, var(--pink-light) 0%, transparent 35%),
+    radial-gradient(circle at 90% 70%, var(--blue-light) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, var(--yellow-light) 0%, transparent 30%),
+    radial-gradient(circle at 20% 80%, var(--orange-light) 0%, transparent 25%);
 }
-.shape{
+
+.shape {
   position: absolute;
   border-radius: 50%;
   opacity: 0.25;
   mix-blend-mode: multiply;
 }
+
 .shape-1{
   width: 300px; height: 300px;
   top: -80px; right: -60px;
