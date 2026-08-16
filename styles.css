@@ -618,8 +618,12 @@ body {
 
   /* Página 2 */
   .letter-page{ padding: 32px 16px 60px; border-radius: 32px; }
-  .big-title{ font-size: 5.8rem; }
-  .big-title span{ font-size: 4.8rem; }
+  .big-title {
+    font-size: clamp(2.8rem, 10vw, 5.8rem);
+  }
+  .big-title span {
+    font-size: clamp(2.2rem, 8vw, 4.8rem);
+  }
   .love-text{ font-size: 1rem; padding: 0 4px; }
   .carousel{ gap: 6px; }
   .track-viewport{ height: 320px; }  /* Aumentado para que quepa mejor */
